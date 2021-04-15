@@ -1,0 +1,346 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  color: #3c3c3c;
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.flex {
+  display: flex;
+  display: -moz-flex;
+  display: -webkit-flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+body .principal h1 {
+  padding-top: 70px;
+  text-align: center;
+  font-size: 28px;
+  font-weight: 400;
+  font-family: "Arvo", serif;
+  letter-spacing: 1px;
+}
+body .principal p.error {
+  margin-right: 3vw;
+  color: red;
+  font-size: 0.8em;
+}
+
+body .head {
+  background-color: #a39594;
+  padding: 5px 0;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+  z-index: 10;
+}
+body .head p {
+  text-align: center;
+  font-family: arial;
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.8em;
+  letter-spacing: 0.8px;
+}
+body .head p b {
+  color: #fff;
+}
+body nav {
+  display: flex;
+  align-content: center;
+  min-height: 50px;
+  box-shadow: 0 2px 10px #ddd;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 26px;
+  z-index: 10;
+  background-color: white;
+}
+body nav .links ul li {
+  display: inline-block;
+  font-weight: 500;
+  margin-right: 15px;
+  color: #3c3c3c;
+  transition: all 0.3s ease;
+  position: relative;
+}
+body nav .links ul li span {
+  position: absolute;
+  top: -8px;
+  left: 9px;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background-color: #ffb0a8;
+  color: darkred;
+  font-size: 0.9em;
+  font-weight: 700;
+  text-align: center;
+  line-height: 22px;
+}
+body nav .links ul li:after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 0;
+  background-color: #fddbcf;
+  transition: all 0.3s ease;
+  margin-top: 5px;
+}
+body nav .links ul li .drop-down {
+  position: absolute;
+  top: calc(50% + 25px);
+  right: 0;
+  border-radius: 5px;
+  width: 150px;
+  box-shadow: 2px 2px 10px #ddd;
+  z-index: 5;
+  border: 1px solid #ddd;
+  background-color: #ffffffc4;
+  height: 0;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  visibility: hidden;
+}
+body nav .links ul li .drop-down a {
+  display: block;
+  font-size: 0.8em;
+  padding: 5px 10px;
+}
+body nav .links ul li .drop-down a:hover {
+  color: darksalmon;
+}
+body nav .links ul li:hover:after {
+  width: 100%;
+}
+body nav .links ul .account-link:hover .drop-down {
+  height: 60px;
+  visibility: visible;
+}
+body nav .links ul .shop-icon {
+  font-size: 1.2em;
+  cursor: pointer;
+}
+body nav .logo {
+  font-size: 30px;
+  opacity: 0.9;
+}
+body nav .logo h1 {
+  font-family: "Arvo", serif;
+}
+body nav .logo span {
+  font-family: "Arvo", serif;
+  color: #fddbcf;
+}
+body .sideBar {
+  width: 20vw;
+  background-color: #fff;
+  height: calc(100vh - 77px);
+  box-shadow: 2px 2px 10px #ddd;
+}
+body .sideBar h3 {
+  margin: 0 0 50px;
+  text-align: center;
+  color: #fff;
+  background-color: #2c4e5a;
+  padding: 20px 0 10px;
+}
+body .sideBar h3 span {
+  display: block;
+  margin: 10px;
+  color: #de6b6b;
+  font-size: 1.2em;
+}
+body .sideBar ul {
+  margin-top: 20px;
+}
+body .sideBar ul li {
+  text-align: center;
+  padding: 15px 0;
+  background-color: #61bec7;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #fff;
+  cursor: pointer;
+}
+body .sideBar ul li:hover, body .sideBar ul li.active {
+  background: #428d94;
+  transform: scale(1.03);
+}
+body .principal {
+  width: 80vw;
+  height: calc(100vh - 77px);
+  overflow: scroll;
+  /*-------------------------------------table style for showing results------------------------------------------------*/
+  /*-------------------------------------table style for showing results------------------------------------------------*/
+}
+body .principal .add-button {
+  position: fixed;
+  top: 100px;
+  left: calc(60vw - 75px);
+  text-align: center;
+  width: 150px;
+  background-color: #7FA3B3;
+  border-radius: 7px;
+  display: none;
+}
+body .principal .add-button a {
+  color: #fff;
+  padding: 2px 10px;
+  font-weight: bold;
+  font-size: 0.9em;
+}
+body .principal .add-button.active {
+  display: block;
+}
+body .principal table {
+  width: 90%;
+  margin: 50px auto;
+  border-collapse: collapse;
+  box-shadow: 2px 2px 10px #ddd;
+  display: none;
+}
+body .principal table.active {
+  display: table;
+}
+body .principal table tr {
+  border: 2px solid #ddd;
+}
+body .principal table tr th {
+  background-color: #7FA3B3;
+  color: white;
+}
+body .principal table tr th:last-of-type {
+  min-width: 336px;
+}
+body .principal table tr th.table-title {
+  background-color: #FFFDDB;
+  color: #333;
+  height: 44px;
+}
+body .principal table tr td, body .principal table tr th {
+  border: 2px solid #777;
+  padding: 5px;
+}
+body .principal table tr td img {
+  width: 100px;
+}
+body .principal table tr td a {
+  padding: 0 10px;
+  color: #fff;
+  border-radius: 5px;
+  margin-right: 2px;
+}
+body .principal table tr td .delete-button {
+  background-color: #ff9a93;
+}
+body .principal table tr td .show-button {
+  background-color: #61bec7;
+}
+body .principal table tr td .set-manager-button {
+  background-color: #93d8a5;
+}
+body .principal table tr:not(.not) {
+  cursor: default;
+}
+body .principal table tr:not(.not):hover {
+  background-color: #e5ffda;
+}
+body .principal table.product td a {
+  margin-right: 2px;
+  display: inline-block;
+  padding: 3px 18px;
+}
+body .principal form {
+  width: 50%;
+  margin: 10px auto;
+  border: 2px solid #333;
+  box-shadow: 2px 2px 10px #ddd;
+  padding: 20px 0;
+  border-radius: 3px;
+}
+body .principal form p.error {
+  margin: 0 0 2px 10%;
+}
+body .principal form select, body .principal form textarea, body .principal form input {
+  display: block;
+  width: 80%;
+  margin: 0 auto 10px;
+  border-radius: 5px;
+  border: 1px solid #333;
+  padding-left: 10px;
+}
+body .principal form select:focus, body .principal form textarea:focus, body .principal form input:focus {
+  background-color: #fff0ea;
+}
+body .principal form input {
+  height: 40px;
+}
+body .principal form textarea {
+  padding: 10px;
+  font-size: 1.2em;
+}
+body .principal form select {
+  display: inline-block;
+  margin-left: 10%;
+  width: 75%;
+  height: 40px;
+}
+body .principal form select:focus option {
+  background-color: #93d8a5;
+  height: 30px;
+  font-size: 1.2em;
+  border: 1px solid #333;
+}
+body .principal form a {
+  margin-left: 2px;
+  width: 5%;
+  padding: 5px 1.5% 7px;
+  font-size: 1.4em;
+  background-color: #61bec7;
+  color: #fff;
+  border-radius: 3px;
+}
+body .principal form input[type=submit] {
+  font-size: 1.2em;
+  background-color: #fddbcf;
+  border-radius: 0;
+  border: 2px solid #ddd;
+  cursor: pointer;
+  color: #bb5851;
+  box-shadow: 2px 5px 5px #999;
+}
+body .principal form input[type=submit]:hover {
+  background-color: #fff;
+}
+body .principal form input[type=file] {
+  display: none;
+}
+body .principal form label.upload {
+  display: inline-block;
+  margin: 0 10% 20px;
+  padding: 5px 10px;
+  background-color: #61bec7;
+  color: #fff;
+  font-weight: 600;
+  box-shadow: 2px 2px 10px #ddd;
+  cursor: pointer;
+  border-radius: 5px;
+}
+body .principal form label.upload .upload-icon {
+  margin-right: 4px;
+  font-size: 1.4em;
+  color: #fff;
+  font-weight: bold;
+}
+
+/*# sourceMappingURL=management.css.map */

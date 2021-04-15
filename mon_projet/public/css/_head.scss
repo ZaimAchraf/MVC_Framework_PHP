@@ -1,0 +1,21 @@
+.head{
+  background-color: #a39594;
+  padding: 5px 0;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+  z-index: 10;
+  p{
+    text-align: center;
+    font-family: arial;
+    color: #fff;
+    font-weight: 600;
+    font-size: .8em;
+    letter-spacing: .8px;
+
+
+    b{
+      color:#fff;
+    }
+  }
+}

@@ -1,0 +1,260 @@
+@import "General_style";
+body {
+  @import "head";
+  @import "nav";
+
+  .sideBar{
+    width: 20vw;
+    background-color: #fff;
+    height: calc(100vh - 77px);
+    box-shadow: 2px 2px 10px #ddd;
+
+    h3{
+      margin: 0 0 50px;
+      text-align: center;
+      color: #fff;
+      background-color: #2c4e5a;
+      padding: 20px 0 10px;
+      span{
+        display: block;
+        margin: 10px;
+        color: #de6b6b;
+        font-size: 1.2em;
+      }
+    }
+
+    ul{
+      margin-top: 20px;
+      li{
+        text-align: center;
+        padding: 15px 0;
+        background-color: #61bec7;
+        margin-bottom: 10px;
+        font-weight: bold;
+        color: #fff;
+        cursor: pointer;
+
+        &:hover, &.active{
+          background: #428d94;
+          transform: scale(1.03);
+        }
+      }
+    }
+  }
+
+  .principal{
+    @extend %app;
+    width: 80vw;
+    height: calc(100vh - 77px);
+    overflow: scroll;
+
+    .add-button{
+      position: fixed;
+      top: 100px;
+      left: calc(60vw - 75px);
+      text-align: center;
+      width: 150px;
+      background-color: #7FA3B3;
+      border-radius: 7px;
+      display: none;
+
+      a{
+        color: #fff;
+        padding: 2px 10px;
+        font-weight: bold;
+        font-size: .9em;
+
+      }
+      &.active{
+        display: block;
+      }
+    }
+/*-------------------------------------table style for showing results------------------------------------------------*/
+    table{
+      width: 90%;
+      margin: 50px auto;
+      border-collapse: collapse;
+      box-shadow: 2px 2px 10px #ddd;
+      display: none;
+
+      &.active{
+        display: table;
+      }
+
+      tr{
+        border: 2px solid #ddd;
+
+        th{
+          background-color: #7FA3B3;
+          color: white;
+
+          &:last-of-type{
+            min-width: 336px;
+          }
+        }
+
+        th.table-title{
+          background-color: #FFFDDB;
+          color: #333;
+          height: 44px;
+        }
+
+        td,th{
+          border: 2px solid #777;
+          padding: 5px;
+        }
+
+        td{
+
+          img{
+            width: 100px;
+          }
+
+          a{
+            padding: 0 10px;
+            color: #fff;
+            border-radius: 5px;
+            margin-right: 2px;
+          }
+
+          .delete-button{
+            background-color: #ff9a93;
+          }
+
+          .show-button{
+            background-color: #61bec7;
+          }
+
+          .set-manager-button{
+            background-color: #93d8a5;
+          }
+        }
+
+        &:not(.not){
+          cursor: default;
+
+          &:hover{
+            background-color: #e5ffda;
+          }
+        }
+
+      }
+
+      &.product{
+        td{
+          a{
+            margin-right: 2px;
+            display: inline-block;
+            padding: 3px 18px;
+          }
+        }
+      }
+
+    }
+/*-------------------------------------table style for showing results------------------------------------------------*/
+
+    form{
+      width: 50%;
+      margin: 10px auto;
+      border: 2px solid #333;
+      box-shadow: 2px 2px 10px #ddd;
+      padding: 20px 0;
+      border-radius: 3px;
+
+      p.error{
+        margin: 0 0 2px 10%;
+      }
+
+      %input{
+        display: block;
+        width: 80%;
+        margin: 0 auto 10px;
+        border-radius: 5px;
+        border: 1px solid #333;
+        padding-left: 10px;
+
+        &:focus{
+          background-color: #fff0ea;
+        }
+      }
+
+      input{
+        @extend %input;
+        height: 40px;
+      }
+
+      textarea{
+        @extend %input;
+        padding: 10px;
+        font-size: 1.2em;
+      }
+
+      select{
+        @extend %input;
+        display: inline-block;
+        margin-left: 10%;
+        width: 75%;
+        height: 40px;
+
+        &:focus{
+          option{
+            background-color: #93d8a5;
+            height: 30px;
+            font-size: 1.2em;
+            border: 1px solid #333;
+          }
+        }
+      }
+
+      a{
+        margin-left: 2px;
+        width: 5%;
+        padding: 5px 1.5% 7px;
+        font-size: 1.4em;
+        background-color: #61bec7;
+        color: #fff;
+        border-radius: 3px;
+      }
+
+      input[type=submit] {
+        font-size: 1.2em;
+        background-color: $pink;
+        border-radius: 0;
+        border: 2px solid #ddd;
+        cursor: pointer;
+        color: #bb5851;
+        box-shadow: 2px 5px 5px #999;
+
+        &:hover {
+          background-color: #fff;
+        }
+
+      }
+
+      input[type=file]{
+        display: none;
+      }
+
+      label.upload{
+        display: inline-block;
+        margin: 0 10% 20px;
+        padding: 5px 10px;
+        background-color: #61bec7;
+        color: #fff;
+        font-weight: 600;
+        box-shadow: 2px 2px 10px #ddd;
+        cursor: pointer;
+        border-radius: 5px;
+
+        .upload-icon{
+          margin-right: 4px;
+          font-size: 1.4em;
+          color: #fff;
+          font-weight: bold;
+        }
+      }
+    }
+
+  }
+
+}
